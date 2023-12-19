@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Herr+Von+Muellerhoff&family=Poppins:ital,wght@0,200;1,200;1,300;1,500&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;400;500&family=Roboto:wght@300&display=swap');
 
 
@@ -98,14 +96,33 @@ span.subject {
 }
 
 /* Background Video */
-/* #vid {
+#vid {
     height: 100%;
+    display: flex;
+    position: relative;
+    background: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     display: none;
 }
 
-#vid video {
-    height: 100vh;
+#vid .visuals {
+    height: 20rem;
+    width: 20rem;
+}
+
+#vid .visuals img {
     width: 100%;
+    height: 100%;
+    animation: .2s vid;
+    animation: vid 2s ease-in-out infinite;
+}
+
+#vid #audio {
+    position: absolute;
+    bottom: 2rem;
+    width: 95%;
 }
 
 #letter.active {
@@ -113,8 +130,8 @@ span.subject {
 }
 
 #vid.active {
-    display: block;
-} */
+    display: flex;
+}
 
 @keyframes vid {
     0% {
@@ -370,6 +387,7 @@ a img {
     margin: .5rem 0;
     display: none;
     transform: 5s;
+    width: 100%;
 }
 
 /* Question section */
@@ -385,7 +403,7 @@ a img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../media/img/wallpaper.jpg');
+    background-image: url('../media/img/Wallpaper.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -411,40 +429,3 @@ footer {
 }
 
 
-/* Background Video */
-#vid {
-    height: 100%;
-    display: flex;
-    position: relative;
-    background: rgb(0, 0, 0);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    display: none;
-}
-
-#vid .visuals {
-    height: 20rem;
-    width: 20rem;
-}
-
-#vid .visuals img {
-    width: 100%;
-    height: 100%;
-    animation: .2s vid;
-    animation: vid 2s ease-in-out infinite;
-}
-
-#vid #audio {
-    position: absolute;
-    bottom: 2rem;
-    width: 95%;
-}
-
-#letter.active {
-    display: flex;
-}
-
-#vid.active {
-    display: flex;
-}

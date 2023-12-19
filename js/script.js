@@ -34,13 +34,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Links of pdf files
 function openPDF1() {
-    window.open("../media/pdf/Linux_Basics_For_Hackers.pdf", "_self");
+    window.open("https://drive.google.com/file/d/1DaDyGtvSUIbWKqTzUg07Akh5TiN0QRb5/view?usp=drive_link", "_self");
 }
 function openPDF2() {
-    window.open("../media/pdf/network-basics-for-hackers.pdf", "_self");
+    window.open("https://drive.google.com/file/d/1bhN5ET7ki5FZkr9kHgez4k9hSAcGLlzF/view?usp=drive_link", "_self");
 }
 function openPDF3() {
-    window.open("../media/pdf/Getting-started-becoming-a-master-hacker-hacking-is-the-most-important-skill-set-of-the-21st-century.pdf", "_self");
+    window.open("https://drive.google.com/file/d/1UqZCzCHIC7pXYQPtanO5lruRROR8LOyv/view?usp=drive_link", "_self");
 }
 
 // Instructions section
@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var audio = document.getElementById('customAudio');
     audio.volume = 0.02;
     audio.style.display = 'none';
-    audio.play();
     document.addEventListener('keydown', function (event) {
         if (event.ctrlKey && event.key === 'm') {
             if (audio.paused) {
@@ -94,4 +93,5 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
+    audio.play();
 });
