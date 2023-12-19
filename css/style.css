@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Herr+Von+Muellerhoff&family=Poppins:ital,wght@0,200;1,200;1,300;1,500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;400;500&family=Roboto:wght@300&display=swap');
+
+
+:root {
+    --prime-color: rgba(0, 187, 216, 0.651);
+    --bg-color: rgb(26, 26, 26);
+    --sec-bg-color: black;
+
+    --text-color: rgb(255, 255, 255);
+}
+
+.h-prime {
+    color: var(--text-color);
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.h-sec {
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.pera {
+    color: var(--text-color);
+    margin: 2rem 0;
+}
+
+.center {
+    align-items: center;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+}
+
+/* Latter */
+#main {
+    min-height: 100vh;
+    position: relative;
+}
+
+#main div {
+    width: 100%;
+    height: 40%;
+    z-index: 99;
+    position: absolute;
+}
+
+
+section {
+    padding-bottom: 2rem;
+    height: 100%;
+    background: var(--bg-color);
+}
+
+/* Application */
+#letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    min-height: 100vh;
+    display: none;
+}
+
+.letter-pera {
+    background: rgb(253, 240, 216);
+    padding: 1.5rem;
+    width: 43%;
+    box-shadow: 5px 5px 10px var(--sec-bg-color);
+}
+
+.letter-pera span {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+    display: block;
+    color: var(--txt-color);
+    font-size: 1.2rem;
+    font-family: 'Dancing Script', cursive;
+    ;
+
+}
+
+span.subject {
+    font-size: 1.5rem;
+}
+
+/* Background Video */
+/* #vid {
+    height: 100%;
+    display: none;
+}
+
+#vid video {
+    height: 100vh;
+    width: 100%;
+}
+
+#letter.active {
+    display: flex;
+}
+
+#vid.active {
+    display: block;
+} */
+
+@keyframes vid {
+    0% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}
+
+/* Header */
+header {
+    background: var(--sec-bg-color);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 99;
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 2px 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 0 2rem;
+    border-radius: 5px;
+}
+
+li a:hover {
+    background: var(--prime-color);
+}
+
+.navbar {
+    transition: .2s ease-in-out
+}
+
+.navbar.fixed {
+    transition: .2s ease-in-out;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--sec-bg-color);
+    z-index: 9999;
+}
+
+/* Body section */
+section {
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+/* Information Section */
+#info {
+    background-color: var(--sec-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#info .text {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@keyframes aboutSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.about-img {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img img {
+    width: 90%;
+    border-radius: 50%;
+    border: 0.2rem solid var(--prime-color);
+}
+
+.about-img .circle-spin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-top: 0.2rem solid var(--sec-bg-color);
+    border-bottom: 0.2rem solid var(--sec-bg-color);
+    border-left: 0.2rem solid var(--prime-color);
+    border-right: 0.2rem solid var(--prime-color);
+    animation: aboutSpinner 8s linear infinite;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.text .pera {
+    font-style: italic;
+    pointer-events: none;
+}
+
+.pera a {
+    text-decoration: none;
+    color: var(--prime-color);
+    font-weight: 500;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.pera span {
+    padding: .2rem 0;
+    display: block;
+}
+
+/* Book Section  */
+.book-cover {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.book-detail {
+    width: 30%;
+    background: rgb(43, 42, 42);
+    padding: 1rem;
+    box-shadow: 1px 1px 1px rgb(75, 75, 75),
+        7px 7px 15px var(--sec-bg-color);
+
+    border: 1px solid rgba(107, 107, 107, 0);
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+.book-detail:hover {
+    box-shadow: 5px 5px 25px var(--prime-color);
+    border: none;
+    border: 1px solid rgb(107, 107, 107);
+}
+
+.book-detail a {
+    width: 100%;
+}
+
+a img {
+    cursor: pointer;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.book-detail .title {
+    color: var(--text-color);
+}
+
+.book-detail .detail {
+    width: 100%;
+    color: var(--text-color);
+    padding: 0 1.5rem;
+}
+
+.book-detail.hidden {
+    visibility: hidden;
+}
+
+.detail h3 {
+    margin: 1rem 0;
+    pointer-events: none;
+}
+
+/* instructions section */
+#instructions {
+    background: var(--sec-bg-color);
+}
+
+.instructions-box {
+    color: white;
+    padding: 2px;
+}
+
+.instruction {
+    margin: 3rem .5rem;
+}
+
+.inst {
+    border-radius: 10px;
+    box-shadow: 0 4px 5px rgb(119, 119, 119);
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 57px 0 15px;
+    cursor: pointer;
+    margin: .5rem 0;
+}
+
+.inst h3 {
+    padding: 1rem .5rem;
+}
+
+.inst i {
+    position: absolute;
+    right: 30px;
+    transition: .2s;
+}
+
+.inst i.active {
+    transform: rotate(180deg);
+    transition: .2s;
+}
+
+
+.expand-box {
+    border-radius: 10px;
+    box-shadow: inset 0 -4px 5px rgb(82, 82, 82);
+    background: rgb(49, 49, 49);
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 57px 0 15px;
+    pointer-events: none;
+    margin: .5rem 0;
+    display: none;
+    transform: 5s;
+}
+
+/* Question section */
+#questions {
+    background: rgba(5, 5, 5, 0.87);
+    position: relative;
+}
+
+#questions::before {
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../media/img/wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.quests {
+    margin-top: 2rem;
+}
+
+.quests h3 {
+    font-size: 1.5rem;
+}
+
+.quests .ans {
+    display: none;
+    margin-left: 1rem;
+    color: rgb(216, 216, 216);
+}
+
+footer {
+    background: black;
+}
+
+
+/* Background Video */
+#vid {
+    height: 100%;
+    display: flex;
+    position: relative;
+    background: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+#vid .visuals {
+    height: 20rem;
+    width: 20rem;
+}
+
+#vid .visuals img {
+    width: 100%;
+    height: 100%;
+    animation: .2s vid;
+    animation: vid 2s ease-in-out infinite;
+}
+
+#vid #audio {
+    position: absolute;
+    bottom: 2rem;
+    width: 95%;
+}
+
+#letter.active {
+    display: flex;
+}
+
+#vid.active {
+    display: flex;
+}

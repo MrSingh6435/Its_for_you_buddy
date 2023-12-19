@@ -1,0 +1,104 @@
+@media only screen and (max-width: 767px) {
+
+    .h-prime {
+        color: var(--text-color);
+        font-size: 1.5rem;
+        padding: 2rem 0;
+        word-spacing: .5rem;
+    }
+
+    .h-sec {
+        color: var(--text-color);
+        font-size: .8rem;
+        padding: 1rem 0;
+    }
+
+    .pera {
+        color: var(--text-color);
+        margin: .5rem 0;
+    }
+
+    /* background-color: #fff; */
+    #main {
+        padding: 0;
+        min-height: 80vh;
+    }
+
+    #main div {
+        height: 12rem;
+    }
+
+    .letter-pera {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .letter-pera span {
+        margin: .5rem 0;
+        font-size: 1rem;
+    }
+
+    span.subject {
+        font-size: 1.2rem;
+    }
+
+    #vid video {
+        height: 60vh;
+    }
+
+
+    /* Header */
+    /* Nav ul */
+
+    nav {
+        position: relative;
+    }
+
+    div.menu {
+        display: block;
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+        position: absolute;
+        flex-direction: column;
+        list-style: none;
+        background: #000000be;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        top: 0;
+        transition: .2s ease-in;
+    }
+
+    nav ul.active {
+        display: block;
+        transition: .2s ease-in;
+    }
+
+    /* main sectiom */
+    section {
+        padding: 2rem;
+    }
+
+    /* book section */
+    .book-cover {
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    .book-detail {
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    .book-detail.hidden {
+        display: none;
+    }
+
+
+}
