@@ -34,41 +34,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Links of pdf files
 function openPDF1() {
-    window.open("https://drive.google.com/file/d/1DaDyGtvSUIbWKqTzUg07Akh5TiN0QRb5/view?usp=drive_link", "_self");
+    window.open("../media/pdf/Linux_Basics_For_Hackers.pdf", "_self");
 }
 function openPDF2() {
-    window.open("https://drive.google.com/file/d/1bhN5ET7ki5FZkr9kHgez4k9hSAcGLlzF/view?usp=drive_link", "_self");
+    window.open("../media/pdf/network-basics-for-hackers.pdf", "_self");
 }
 function openPDF3() {
-    window.open("https://drive.google.com/file/d/1UqZCzCHIC7pXYQPtanO5lruRROR8LOyv/view?usp=drive_link", "_self");
+    window.open("../media/pdf/Getting-started-becoming-a-master-hacker-hacking-is-the-most-important-skill-set-of-the-21st-century.pdf", "_self");
 }
 
 // Instructions section
 function toggleExpand(element) {
     var icon = element.querySelector('i');
-    var expandBox = element.nextElementSibling;
+    var expandBox = element.nextElementSibling; 
 
-    if (expandBox.style.display === "none" || expandBox.style.display === "") {
-        expandBox.style.display = "flex";
-        icon.classList.add('active');
+    if (icon.classList.contains('active')) {
+        // Slide up (collapse)
+        expandBox.classList.remove('active');   
+        expandBox.classList.add('removing');     
+        
+        // After the animation ends, hide the element
+        setTimeout(() => {
+            expandBox.style.display = "none";    
+            expandBox.classList.remove('removing'); 
+        }, 500); 
+
+        icon.classList.remove('active'); 
     } else {
-        expandBox.style.display = "none";
-        icon.classList.remove('active');
+        // Slide down (expand)
+        expandBox.style.display = "flex";        
+        expandBox.classList.add('active');       
+        
+        icon.classList.add('active');            
     }
-
 }
+
+
 
 // Questions Section
 function expandQuestions(element1) {
     var ans = element1.querySelector('p');
+    
+    if (ans.classList.contains('active')) {
+        ans.classList.remove('active');
+        ans.classList.add('removing'); 
 
-    if (ans.style.display === "none" || ans.style.display === "") {
-        ans.style.display = "flex";
+        setTimeout(() => {
+            ans.style.display = "none"; 
+            ans.classList.remove('removing'); 
+        }, 500); 
     } else {
-        ans.style.display = "none";
+        ans.style.display = "block"; 
+        ans.classList.add('active'); 
     }
-
 }
+
+
 
 // Navgiation bar
 document.addEventListener('DOMContentLoaded', function () {
@@ -84,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var audio = document.getElementById('customAudio');
     audio.volume = 0.02;
     audio.style.display = 'none';
+    audio.play();
     document.addEventListener('keydown', function (event) {
         if (event.ctrlKey && event.key === 'm') {
             if (audio.paused) {
@@ -93,5 +115,4 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-    audio.play();
 });

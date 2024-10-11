@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Herr+Von+Muellerhoff&family=Poppins:ital,wght@0,200;1,200;1,300;1,500&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;400;500&family=Roboto:wght@300&display=swap');
 
 
@@ -96,33 +98,14 @@ span.subject {
 }
 
 /* Background Video */
-#vid {
+/* #vid {
     height: 100%;
-    display: flex;
-    position: relative;
-    background: rgb(0, 0, 0);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     display: none;
 }
 
-#vid .visuals {
-    height: 20rem;
-    width: 20rem;
-}
-
-#vid .visuals img {
+#vid video {
+    height: 100vh;
     width: 100%;
-    height: 100%;
-    animation: .2s vid;
-    animation: vid 2s ease-in-out infinite;
-}
-
-#vid #audio {
-    position: absolute;
-    bottom: 2rem;
-    width: 95%;
 }
 
 #letter.active {
@@ -130,8 +113,8 @@ span.subject {
 }
 
 #vid.active {
-    display: flex;
-}
+    display: block;
+} */
 
 @keyframes vid {
     0% {
@@ -238,7 +221,12 @@ section {
 .about-img img {
     width: 90%;
     border-radius: 50%;
+    position: absolute;
     border: 0.2rem solid var(--prime-color);
+}
+
+.about-img img.blend {
+    opacity: .8;
 }
 
 .about-img .circle-spin {
@@ -357,6 +345,7 @@ a img {
     padding: 0 57px 0 15px;
     cursor: pointer;
     margin: .5rem 0;
+    z-index: 1;
 }
 
 .inst h3 {
@@ -374,26 +363,69 @@ a img {
     transition: .2s;
 }
 
+/* Slide-down and Slide-up keyframe animations */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+        max-height: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 500px; /* Adjust based on content height */
+    }
+}
 
+@keyframes slideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 500px; /* Full height when visible */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20%);
+        max-height: 0;
+    }
+}
+
+/* Styles for the expand-box elements */
 .expand-box {
     border-radius: 10px;
     box-shadow: inset 0 -4px 5px rgb(82, 82, 82);
     background: rgb(49, 49, 49);
-    display: flex;
+    display: none; 
     align-items: center;
     position: relative;
     padding: 0 57px 0 15px;
     pointer-events: none;
-    margin: .5rem 0;
-    display: none;
-    transform: 5s;
-    width: 100%;
+    overflow: hidden; 
+    z-index: 0;
 }
+
+/* When the box is expanding (slide down) */
+.expand-box.active {
+    display: block;
+    animation: slideDown 0.5s ease forwards;
+    pointer-events: all; 
+    z-index: 2;
+}
+
+/* When the box is collapsing (slide up) */
+.expand-box.removing {
+    animation: slideUp 0.5s ease forwards;
+    pointer-events: none; 
+    z-index: 0;
+}
+
 
 /* Question section */
 #questions {
     background: rgba(5, 5, 5, 0.87);
     position: relative;
+    transform: 5s;
+    cursor: pointer;
 }
 
 #questions::before {
@@ -403,7 +435,7 @@ a img {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://drive.google.com/file/d/1jS0eoMqWahIUZZ7p4Vb44ZiNo5bZ-j3A/view?usp=drive_link');
+    background-image: url('../media/img/wallpaper.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -419,13 +451,96 @@ a img {
 }
 
 .quests .ans {
-    display: none;
+    display: none; 
     margin-left: 1rem;
     color: rgb(216, 216, 216);
+    opacity: 0;
+    transform: translateY(-100%); 
+    transition: opacity 0.3s ease; 
 }
+
+/* Slide down animation */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%); 
+        max-height: 0; 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); 
+        max-height: 500px; 
+    }
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0); 
+        max-height: 500px; 
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50%); 
+        max-height: 0; 
+    }
+}
+
+
+.quests .ans.active {
+    display: block; /* Make it visible */
+    animation: slideDown 0.5s ease forwards; 
+    opacity: 1;
+}
+
+.quests .ans.removing {
+    animation: slideUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+
+
 
 footer {
     background: black;
 }
 
 
+/* Background Video */
+#vid {
+    height: 100%;
+    display: flex;
+    position: relative;
+    background: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+#vid .visuals {
+    height: 20rem;
+    width: 20rem;
+}
+
+#vid .visuals img {
+    width: 100%;
+    height: 100%;
+    animation: .2s vid;
+    animation: vid 2s ease-in-out infinite;
+}
+
+#vid #audio {
+    position: absolute;
+    bottom: 2rem;
+    width: 95%;
+}
+
+#letter.active {
+    display: flex;
+}
+
+#vid.active {
+    display: flex;
+}

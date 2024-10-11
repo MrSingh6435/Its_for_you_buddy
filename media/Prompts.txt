@@ -1,0 +1,15 @@
+Try following prompts
+
+I am a first year computer science student, I know python and basics of data science. Prepare a one year roadmap for grow in Data science, Data Analytics and Gen AI domain.
+
+I am an intermediate student in data science. Prepare a one year roadmap to grow in Gen AI domain.
+
+I am a non computer science student and Prepare a one year roadmap for grow in Data science, Data Analytics and Gen AI domain.
+
+Prepare a one year roadmap for grow in Data science, Data Analytics and Gen AI domain.
+
+Prepare a one year roadmap for grow in Image processing, NPL, Time series and Gen AI domain.
+
+Prepare a one year roadmap to become expert in the mathematics for Machine Learning and Deep Learning.
+
+Prepare a one year roadmap to become Grand Master in Kaggle and suggest some advance tips and tricks.
