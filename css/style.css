@@ -322,6 +322,113 @@ a img {
     pointer-events: none;
 }
 
+/* Youtbe Content */
+#yt-content{
+    background: black;
+    color: white;
+}
+#yt-content h2{
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    border-bottom: 4px solid rgb(110, 110, 110);
+    cursor: pointer;
+}
+#yt-content ul{
+    width: 85%;
+    margin: 1rem auto;
+    padding: 1rem 0;
+    list-style: none;
+    display: none; 
+}
+
+#yt-content ul li{
+    display: flex;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgb(91, 91, 91);
+}
+
+#yt-content ul.active {
+    display: block;
+    animation: slideDown1 0.5s ease forwards;
+}
+
+#yt-content ul.removing {
+    animation: slideUp1 0.5s ease forwards;
+}
+
+/* Animation for slide down */
+@keyframes slideDown1 {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation for slide up */
+@keyframes slideUp1 {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+#yt-content ul li a{
+    text-decoration: none;
+    margin-left: .5rem;
+    color: cyan;
+    align-items: right;
+}
+
+#yt-content ul li a:hover{
+    color: rgb(0, 160, 160);
+    background: #000;
+}
+
+
+/* Youtbe Content */
+#blogs-recom{
+    background: #1a1a1a;
+    color: white;
+}
+#blogs-recom h2{
+    width: 85%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    border-bottom: 4px solid rgb(110, 110, 110);
+    cursor: pointer;
+}
+#blogs-recom ul{
+    width: 85%;
+    margin: 1rem auto;
+    padding: 1rem 0;
+    list-style: none;
+    display: none; 
+}
+
+#blogs-recom ul li{
+    display: flex;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgb(91, 91, 91);
+}
+
+#blogs-recom ul.active {
+    display: block;
+    animation: slideDown1 0.5s ease forwards;
+}
+
+#blogs-recom ul.removing {
+    animation: slideUp1 0.5s ease forwards;
+}
+
+#blogs-recom ul li a{
+    text-decoration: none;
+    margin-left: .5rem;
+    color: cyan;
+    align-items: right;
+}
+
+#blogs-recom ul li a:hover{
+    color: rgb(0, 160, 160);
+    background: #1a1a1a;
+}
+
 /* instructions section */
 #instructions {
     background: var(--sec-bg-color);
