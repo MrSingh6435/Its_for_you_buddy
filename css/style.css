@@ -518,7 +518,7 @@ a img {
 
 /* Question section */
 #questions {
-    background: var(--bg-color);
+    /* background: var(--bg-color); */
     position: relative;
     transform: 5s;
     cursor: pointer;
