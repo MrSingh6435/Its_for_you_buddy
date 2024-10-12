@@ -2,14 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;400;500&family=Roboto:wght@300&display=swap');
 
-
-:root {
-    --prime-color: rgba(0, 187, 216, 0.651);
-    --bg-color: rgb(26, 26, 26);
-    --sec-bg-color: black;
-    --text-color: rgb(255, 255, 255);
-}
-
 .h-prime {
     color: var(--text-color);
     font-size: 2rem;
@@ -42,6 +34,11 @@
 }
 
 body {
+    --prime-color: rgba(0, 187, 216, 0.651);
+    --bg-color: rgb(26, 26, 26);
+    --sec-bg-color: black;
+    --text-color: rgb(255, 255, 255);
+    
     position: relative;
     background: var(--bg-color);
 }
