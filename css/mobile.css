@@ -1,24 +1,100 @@
-@media only screen and (max-width: 767px) {
-
+/* Extra small devices (phones, less than 576px) */
+@media only screen and (max-width: 575.98px) {
     .h-prime {
-        color: var(--text-color);
-        font-size: 1.5rem;
-        padding: 2rem 0;
-        word-spacing: .5rem;
+        font-size: 1.4rem;
+        padding: 1.5rem 0;
     }
 
     .h-sec {
-        color: var(--text-color);
-        font-size: .8rem;
+        font-size: 0.75rem;
+        padding: 0.8rem 0;
+    }
+
+    .pera {
+        margin: 0.5rem 0;
+    }
+
+    #main {
+        padding: 0;
+        min-height: 70vh;
+    }
+
+    #main div {
+        height: 10rem;
+    }
+
+    .letter-pera {
+        padding: 1rem;
+    }
+
+    .letter-pera span {
+        font-size: 0.9rem;
+    }
+
+    span.subject {
+        font-size: 1.1rem;
+    }
+
+    #vid video {
+        height: 50vh;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    div.menu {
+        left: 0.5rem;
+        top: 0.5rem;
+    }
+
+    body.new #main section.new h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Adjust nav ul for smaller screens */
+    nav ul {
+        padding-left: 0.5rem;
+    }
+
+    /* Adjusting main section padding */
+    section {
+        padding: 1.5rem;
+    }
+
+    /* Book section adjustments */
+    .book-cover {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    .book-detail {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .book-detail.hidden {
+        display: none;
+    }
+}
+
+/* Small devices (tablets, 576px and up) */
+@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+    .h-prime {
+        font-size: 1.5rem;
+        padding: 2rem 0;
+    }
+
+    .h-sec {
+        font-size: 0.85rem;
         padding: 1rem 0;
     }
 
     .pera {
-        color: var(--text-color);
-        margin: .5rem 0;
+        margin: 0.5rem 0;
     }
 
-    /* background-color: #fff; */
     #main {
         padding: 0;
         min-height: 80vh;
@@ -29,12 +105,11 @@
     }
 
     .letter-pera {
-        width: 100%;
         padding: 1.5rem;
     }
 
     .letter-pera span {
-        margin: .5rem 0;
+        margin: 0.5rem 0;
         font-size: 1rem;
     }
 
@@ -46,10 +121,7 @@
         height: 60vh;
     }
 
-
-    /* Header */
-    /* Nav ul */
-
+    /* Adjust nav ul */
     nav {
         position: relative;
     }
@@ -61,7 +133,7 @@
         top: 1rem;
     }
 
-    body.new #main section.new h1{
+    body.new #main section.new h1 {
         font-size: 2rem;
     }
 
@@ -83,12 +155,12 @@
         transition: .2s ease-in;
     }
 
-    /* main sectiom */
+    /* Main section padding */
     section {
         padding: 2rem;
     }
 
-    /* book section */
+    /* Book section */
     .book-cover {
         flex-direction: column;
         justify-content: space-between;
@@ -103,6 +175,56 @@
     .book-detail.hidden {
         display: none;
     }
+}
 
+/* Medium devices (desktops, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .h-prime {
+        font-size: 2rem;
+        padding: 2rem 0;
+    }
 
+    .h-sec {
+        font-size: 1rem;
+        padding: 1rem 0;
+    }
+
+    .pera {
+        margin: 1rem 0;
+    }
+
+    #main {
+        padding: 0;
+        min-height: 80vh;
+    }
+
+    #main div {
+        height: 15rem;
+    }
+
+    .letter-pera {
+        width: 60%;
+        padding: 1.5rem;
+    }
+
+    .letter-pera span {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+    }
+
+    span.subject {
+        font-size: 1.5rem;
+    }
+
+    #vid video {
+        height: 70vh;
+    }
+
+    nav ul {
+        display: flex;
+        width: auto;
+        flex-direction: row;
+        background: transparent;
+        padding: 0;
+    }
 }
