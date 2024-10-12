@@ -7,7 +7,6 @@
     --prime-color: rgba(0, 187, 216, 0.651);
     --bg-color: rgb(26, 26, 26);
     --sec-bg-color: black;
-
     --text-color: rgb(255, 255, 255);
 }
 
@@ -33,6 +32,7 @@
     text-align: center;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -42,7 +42,39 @@
 }
 
 body {
+    position: relative;
     background: var(--bg-color);
+}
+
+body.new {
+
+    --prime-color: rgb(255, 137, 157);
+    --bg-color: linear-gradient(cyan,rgb(237, 0, 237),rgb(0, 0, 152));
+    --sec-bg-color: linear-gradient(rgb(0, 0, 152), cyan);
+    --text-color: rgb(255, 255, 255);
+
+    position: relative;
+    background: var(--bg-color);
+}
+
+#oldBTN{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 25px;
+    border: 2px solid var(--prime-color);
+    background: black;
+    color: var(--prime-color);
+    padding: .5rem 1rem;
+    font-size: .7rem;
+    cursor: pointer;
+    z-index: 3;
+}
+
+#oldBTN:hover{
+    background: var(--prime-color);
+    color: black;
 }
 
 /* Latter */
@@ -58,12 +90,34 @@ body {
     position: absolute;
 }
 
-
 section {
     padding-bottom: 2rem;
     height: 100%;
     background: var(--bg-color);
 }
+
+section.new{
+    display: none;
+}
+
+body.new #main section{
+    display: none;
+}
+
+body.new #main section.new{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url(../media/img/homebg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+body.new #main section.new h1{
+    font-size: 4rem;
+}
+
 
 /* Application */
 #letter {
@@ -76,7 +130,7 @@ section {
 }
 
 .letter-pera {
-    background: rgb(253, 240, 216);
+    background: var(--text-color);
     padding: 1.5rem;
     width: 43%;
     box-shadow: 5px 5px 10px var(--sec-bg-color);
@@ -89,45 +143,11 @@ section {
     color: var(--txt-color);
     font-size: 1.2rem;
     font-family: 'Dancing Script', cursive;
-    ;
 
 }
 
 span.subject {
     font-size: 1.5rem;
-}
-
-/* Background Video */
-/* #vid {
-    height: 100%;
-    display: none;
-}
-
-#vid video {
-    height: 100vh;
-    width: 100%;
-}
-
-#letter.active {
-    display: flex;
-}
-
-#vid.active {
-    display: block;
-} */
-
-@keyframes vid {
-    0% {
-        opacity: .5;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: .5;
-    }
 }
 
 /* Header */
@@ -145,7 +165,7 @@ div.menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--text-color);
     z-index: 99;
     display: none;
 }
@@ -183,6 +203,14 @@ li a:hover {
     z-index: 9999;
 }
 
+body.new .navbar.fixed{
+    background: blue;
+}
+
+body.new header{
+    background: blue;
+}
+
 /* Body section */
 section {
     padding: 2rem;
@@ -200,12 +228,6 @@ section {
 #info .text {
     width: 90%;
     margin: 0 auto;
-}
-
-@keyframes aboutSpinner {
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
 }
 
 .about-img {
@@ -227,6 +249,10 @@ section {
 
 .about-img img.blend {
     opacity: .8;
+}
+
+body.new .about-img img.blend{
+    opacity: 1;
 }
 
 .about-img .circle-spin {
@@ -276,7 +302,7 @@ span {
 
 .book-detail {
     width: 30%;
-    background: rgb(43, 42, 42);
+    background: var(--bg-color);
     padding: 1rem;
     box-shadow: 1px 1px 1px rgb(75, 75, 75),
         7px 7px 15px var(--sec-bg-color);
@@ -324,8 +350,8 @@ a img {
 
 /* Youtbe Content */
 #yt-content{
-    background: black;
-    color: white;
+    background: var(--sec-bg-color);
+    color: var(--text-color);
 }
 #yt-content h2{
     width: 85%;
@@ -357,41 +383,29 @@ a img {
     animation: slideUp1 0.5s ease forwards;
 }
 
-/* Animation for slide down */
-@keyframes slideDown1 {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Animation for slide up */
-@keyframes slideUp1 {
-    from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(-10px); }
-}
-
 #yt-content ul li a{
     text-decoration: none;
     margin-left: .5rem;
-    color: cyan;
+    color: var(--prime-color);
     align-items: right;
 }
 
 #yt-content ul li a:hover{
-    color: rgb(0, 160, 160);
+    color: var(--prime-color);
     background: #000;
 }
 
 
 /* Youtbe Content */
 #blogs-recom{
-    background: #1a1a1a;
-    color: white;
+    background: var(--bg-color);
+    color: var(--text-color);
 }
 #blogs-recom h2{
     width: 85%;
     margin: 0 auto;
     margin-bottom: 2rem;
-    border-bottom: 4px solid rgb(110, 110, 110);
+    border-bottom: 4px solid var(--sec-bg-color);
     cursor: pointer;
 }
 #blogs-recom ul{
@@ -405,7 +419,7 @@ a img {
 #blogs-recom ul li{
     display: flex;
     margin-bottom: 2rem;
-    border-bottom: 1px solid rgb(91, 91, 91);
+    border-bottom: 1px solid var(--sec-bg-color);
 }
 
 #blogs-recom ul.active {
@@ -420,13 +434,13 @@ a img {
 #blogs-recom ul li a{
     text-decoration: none;
     margin-left: .5rem;
-    color: cyan;
+    color: var(--prime-color);
     align-items: right;
 }
 
 #blogs-recom ul li a:hover{
     color: rgb(0, 160, 160);
-    background: #1a1a1a;
+    background: var(--bg-color);
 }
 
 /* instructions section */
@@ -435,7 +449,7 @@ a img {
 }
 
 .instructions-box {
-    color: white;
+    color: var(--text-color);
     padding: 2px;
 }
 
@@ -470,32 +484,6 @@ a img {
     transition: .2s;
 }
 
-/* Slide-down and Slide-up keyframe animations */
-@keyframes slideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-20%);
-        max-height: 0;
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-        max-height: 500px; /* Adjust based on content height */
-    }
-}
-
-@keyframes slideUp {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-        max-height: 500px; /* Full height when visible */
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-20%);
-        max-height: 0;
-    }
-}
 
 /* Styles for the expand-box elements */
 .expand-box {
@@ -529,7 +517,7 @@ a img {
 
 /* Question section */
 #questions {
-    background: rgba(5, 5, 5, 0.87);
+    background: var(--bg-color);
     position: relative;
     transform: 5s;
     cursor: pointer;
@@ -560,40 +548,11 @@ a img {
 .quests .ans {
     display: none; 
     margin-left: 1rem;
-    color: rgb(216, 216, 216);
+    color: var(--text-color);
     opacity: 0;
     transform: translateY(-100%); 
     transition: opacity 0.3s ease; 
 }
-
-/* Slide down animation */
-@keyframes slideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-100%); 
-        max-height: 0; 
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0); 
-        max-height: 500px; 
-    }
-}
-
-/* Slide up animation */
-@keyframes slideUp {
-    0% {
-        opacity: 1;
-        transform: translateY(0); 
-        max-height: 500px; 
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-50%); 
-        max-height: 0; 
-    }
-}
-
 
 .quests .ans.active {
     display: block; /* Make it visible */
@@ -606,13 +565,9 @@ a img {
     opacity: 0;
 }
 
-
-
-
 footer {
     background: black;
 }
-
 
 /* Background Video */
 #vid {
@@ -650,4 +605,93 @@ footer {
 
 #vid.active {
     display: flex;
+}
+
+/* KeyFrames for Animation */
+
+@keyframes vid {
+    0% {
+        opacity: .5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}
+
+@keyframes aboutSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Animation for slide down */
+@keyframes slideDown1 {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation for slide up */
+@keyframes slideUp1 {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Slide-down and Slide-up keyframe animations */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20%);
+        max-height: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 500px; /* Adjust based on content height */
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 500px; /* Full height when visible */
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20%);
+        max-height: 0;
+    }
+}
+
+/* Slide down animation */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%); 
+        max-height: 0; 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); 
+        max-height: 500px; 
+    }
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0); 
+        max-height: 500px; 
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50%); 
+        max-height: 0; 
+    }
 }

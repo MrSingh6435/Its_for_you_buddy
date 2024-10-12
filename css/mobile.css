@@ -61,6 +61,10 @@
         top: 1rem;
     }
 
+    body.new #main section.new h1{
+        font-size: 2rem;
+    }
+
     nav ul {
         display: none;
         width: 100%;

@@ -1,3 +1,12 @@
+// Old new button
+document.getElementById("oldBTN").addEventListener("click", function() {
+    // Remove the 'new' class from the body
+    document.body.classList.remove("new");
+
+    // Set the button's display to 'none'
+    this.style.display = "none";
+});
+
 function toggleClasses() {
     var letter = document.getElementById('letter');
     var vid = document.getElementById('vid');
