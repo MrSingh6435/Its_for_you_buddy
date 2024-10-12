@@ -109,7 +109,7 @@ body.new #main section.new{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: url(../media/img/homebg.jpg);
+    background: url('../media/img/homebg.jpg');
     background-size: cover;
     background-position: center;
 }
