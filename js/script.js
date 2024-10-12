@@ -43,6 +43,88 @@ function openPDF3() {
     window.open("../media/pdf/Getting-started-becoming-a-master-hacker-hacking-is-the-most-important-skill-set-of-the-21st-century.pdf", "_self");
 }
 
+// Youtube content
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all h2 elements within the #yt-content section
+    var headers = document.querySelectorAll('#yt-content h2');
+    
+    // Add click event listener to each h2
+    headers.forEach(function(header) {
+        header.addEventListener('click', function() {
+            toggleYTContent(this);  // Pass the clicked h2 element
+        });
+    });
+});
+
+// youtube section animation
+function toggleYTContent(element) {
+    var icon = element.querySelector('i');  // Assuming you may add an icon to h2 for expanding/collapsing
+    var expandBox = element.nextElementSibling;  // The next sibling is the ul element (the list)
+
+    if (expandBox.classList.contains('active')) {
+        // Slide up (collapse)
+        expandBox.classList.remove('active');   
+        expandBox.classList.add('removing');     
+        
+        // After the animation ends, hide the element
+        setTimeout(() => {
+            expandBox.style.display = "none";    
+            expandBox.classList.remove('removing'); 
+        }, 500);  // Duration matches the CSS animation (slideUp 0.5s)
+
+        if (icon) icon.classList.remove('active'); 
+    } else {
+        // Slide down (expand)
+        expandBox.style.display = "block";        
+        expandBox.classList.add('active');       
+        expandBox.classList.remove('removing');
+
+        if (icon) icon.classList.add('active');            
+    }
+}
+
+// Bloge content
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all h2 elements within the #yt-content section
+    var headers = document.querySelectorAll('#blogs-recom h2');
+    
+    // Add click event listener to each h2
+    headers.forEach(function(header) {
+        header.addEventListener('click', function() {
+            toggleBlogsRecom(this);  // Pass the clicked h2 element
+        });
+    });
+});
+
+// blog animation
+function toggleBlogsRecom(element) {
+    var icon = element.querySelector('i');  
+    var expandBox = element.nextElementSibling;  
+
+    if (expandBox.classList.contains('active')) {
+        // Slide up (collapse)
+        expandBox.classList.remove('active');   
+        expandBox.classList.add('removing');     
+        
+        // After the animation ends, hide the element
+        setTimeout(() => {
+            expandBox.style.display = "none";    
+            expandBox.classList.remove('removing'); 
+        }, 500);  // Duration matches the CSS animation (slideUp 0.5s)
+
+        if (icon) icon.classList.remove('active'); 
+    } else {
+        // Slide down (expand)
+        expandBox.style.display = "block";        
+        expandBox.classList.add('active');       
+        expandBox.classList.remove('removing');
+
+        if (icon) icon.classList.add('active');            
+    }
+}
+
+
+
 // Instructions section
 function toggleExpand(element) {
     var icon = element.querySelector('i');
@@ -68,7 +150,6 @@ function toggleExpand(element) {
         icon.classList.add('active');            
     }
 }
-
 
 
 // Questions Section
