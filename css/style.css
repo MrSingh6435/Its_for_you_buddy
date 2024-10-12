@@ -38,7 +38,7 @@ body {
     --bg-color: rgb(26, 26, 26);
     --sec-bg-color: black;
     --text-color: rgb(255, 255, 255);
-    
+
     position: relative;
     background: var(--bg-color);
 }
@@ -46,7 +46,7 @@ body {
 body.new {
 
     --prime-color: rgb(255, 137, 157);
-    --bg-color: linear-gradient(cyan,rgb(237, 0, 237),rgb(0, 0, 152));
+    --bg-color: linear-gradient(cyan, rgb(237, 0, 237), rgb(0, 0, 152));
     --sec-bg-color: linear-gradient(rgb(0, 0, 152), cyan);
     --text-color: rgb(255, 255, 255);
 
@@ -54,7 +54,7 @@ body.new {
     background: var(--bg-color);
 }
 
-#oldBTN{
+#oldBTN {
     position: fixed;
     bottom: 10px;
     right: 10px;
@@ -69,7 +69,7 @@ body.new {
     z-index: 3;
 }
 
-#oldBTN:hover{
+#oldBTN:hover {
     background: var(--prime-color);
     color: black;
 }
@@ -93,15 +93,15 @@ section {
     background: var(--bg-color);
 }
 
-section.new{
+section.new {
     display: none;
 }
 
-body.new #main section{
+body.new #main section {
     display: none;
 }
 
-body.new #main section.new{
+body.new #main section.new {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,7 +111,7 @@ body.new #main section.new{
     background-position: center;
 }
 
-body.new #main section.new h1{
+body.new #main section.new h1 {
     font-size: 4rem;
 }
 
@@ -200,11 +200,11 @@ li a:hover {
     z-index: 9999;
 }
 
-body.new .navbar.fixed{
+body.new .navbar.fixed {
     background: blue;
 }
 
-body.new header{
+body.new header {
     background: blue;
 }
 
@@ -248,7 +248,7 @@ section {
     opacity: .8;
 }
 
-body.new .about-img img.blend{
+body.new .about-img img.blend {
     opacity: 1;
 }
 
@@ -346,26 +346,28 @@ a img {
 }
 
 /* Youtbe Content */
-#yt-content{
+#yt-content {
     background: var(--sec-bg-color);
     color: var(--text-color);
 }
-#yt-content h2{
+
+#yt-content h2 {
     width: 85%;
     margin: 0 auto;
     margin-bottom: 2rem;
     border-bottom: 4px solid rgb(110, 110, 110);
     cursor: pointer;
 }
-#yt-content ul{
+
+#yt-content ul {
     width: 85%;
     margin: 1rem auto;
     padding: 1rem 0;
     list-style: none;
-    display: none; 
+    display: none;
 }
 
-#yt-content ul li{
+#yt-content ul li {
     display: flex;
     margin-bottom: 2rem;
     border-bottom: 1px solid rgb(91, 91, 91);
@@ -380,40 +382,42 @@ a img {
     animation: slideUp1 0.5s ease forwards;
 }
 
-#yt-content ul li a{
+#yt-content ul li a {
     text-decoration: none;
     margin-left: .5rem;
     color: var(--prime-color);
     align-items: right;
 }
 
-#yt-content ul li a:hover{
+#yt-content ul li a:hover {
     color: var(--prime-color);
     background: #000;
 }
 
 
 /* Youtbe Content */
-#blogs-recom{
+#blogs-recom {
     background: var(--bg-color);
     color: var(--text-color);
 }
-#blogs-recom h2{
+
+#blogs-recom h2 {
     width: 85%;
     margin: 0 auto;
     margin-bottom: 2rem;
     border-bottom: 4px solid var(--sec-bg-color);
     cursor: pointer;
 }
-#blogs-recom ul{
+
+#blogs-recom ul {
     width: 85%;
     margin: 1rem auto;
     padding: 1rem 0;
     list-style: none;
-    display: none; 
+    display: none;
 }
 
-#blogs-recom ul li{
+#blogs-recom ul li {
     display: flex;
     margin-bottom: 2rem;
     border-bottom: 1px solid var(--sec-bg-color);
@@ -428,14 +432,14 @@ a img {
     animation: slideUp1 0.5s ease forwards;
 }
 
-#blogs-recom ul li a{
+#blogs-recom ul li a {
     text-decoration: none;
     margin-left: .5rem;
     color: var(--prime-color);
     align-items: right;
 }
 
-#blogs-recom ul li a:hover{
+#blogs-recom ul li a:hover {
     color: rgb(0, 160, 160);
     background: var(--bg-color);
 }
@@ -487,12 +491,12 @@ a img {
     border-radius: 10px;
     box-shadow: inset 0 -4px 5px rgb(82, 82, 82);
     background: rgb(49, 49, 49);
-    display: none; 
+    display: none;
     align-items: center;
     position: relative;
     padding: 0 57px 0 15px;
     pointer-events: none;
-    overflow: hidden; 
+    overflow: hidden;
     z-index: 0;
 }
 
@@ -500,14 +504,14 @@ a img {
 .expand-box.active {
     display: block;
     animation: slideDown 0.5s ease forwards;
-    pointer-events: all; 
+    pointer-events: all;
     z-index: 2;
 }
 
 /* When the box is collapsing (slide up) */
 .expand-box.removing {
     animation: slideUp 0.5s ease forwards;
-    pointer-events: none; 
+    pointer-events: none;
     z-index: 0;
 }
 
@@ -543,17 +547,18 @@ a img {
 }
 
 .quests .ans {
-    display: none; 
+    display: none;
     margin-left: 1rem;
     color: var(--text-color);
     opacity: 0;
-    transform: translateY(-100%); 
-    transition: opacity 0.3s ease; 
+    transform: translateY(-100%);
+    transition: opacity 0.3s ease;
 }
 
 .quests .ans.active {
-    display: block; /* Make it visible */
-    animation: slideDown 0.5s ease forwards; 
+    display: block;
+    /* Make it visible */
+    animation: slideDown 0.5s ease forwards;
     opacity: 1;
 }
 
@@ -628,14 +633,28 @@ footer {
 
 /* Animation for slide down */
 @keyframes slideDown1 {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Animation for slide up */
 @keyframes slideUp1 {
-    from { opacity: 1; transform: translateY(0); }
-    to { opacity: 0; transform: translateY(-10px); }
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
 }
 
 /* Slide-down and Slide-up keyframe animations */
@@ -645,10 +664,12 @@ footer {
         transform: translateY(-20%);
         max-height: 0;
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
-        max-height: 500px; /* Adjust based on content height */
+        max-height: 500px;
+        /* Adjust based on content height */
     }
 }
 
@@ -656,8 +677,10 @@ footer {
     0% {
         opacity: 1;
         transform: translateY(0);
-        max-height: 500px; /* Full height when visible */
+        max-height: 500px;
+        /* Full height when visible */
     }
+
     100% {
         opacity: 0;
         transform: translateY(-20%);
@@ -669,13 +692,14 @@ footer {
 @keyframes slideDown {
     0% {
         opacity: 0;
-        transform: translateY(-100%); 
-        max-height: 0; 
+        transform: translateY(-100%);
+        max-height: 0;
     }
+
     100% {
         opacity: 1;
-        transform: translateY(0); 
-        max-height: 500px; 
+        transform: translateY(0);
+        max-height: 500px;
     }
 }
 
@@ -683,12 +707,13 @@ footer {
 @keyframes slideUp {
     0% {
         opacity: 1;
-        transform: translateY(0); 
-        max-height: 500px; 
+        transform: translateY(0);
+        max-height: 500px;
     }
+
     100% {
         opacity: 0;
-        transform: translateY(-50%); 
-        max-height: 0; 
+        transform: translateY(-50%);
+        max-height: 0;
     }
 }
