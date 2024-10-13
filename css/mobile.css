@@ -43,12 +43,16 @@
         position: relative;
     }
 
+    /* Menu button for small screens (phones) */
     div.menu {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        left: 0.5rem;
-        top: 0.5rem;
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        z-index: 99;
+        color: var(--text-color);
     }
 
     body.new #main section.new h1 {
@@ -96,7 +100,7 @@
 }
 
 /* Small devices (tablets, 576px and up) */
-@media only screen and (min-width: 576px) and (max-width: 767.98px) {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
     .h-prime {
         font-size: 1.5rem;
         padding: 2rem 0;
@@ -144,10 +148,13 @@
 
     div.menu {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        position: absolute;
         left: 1rem;
         top: 1rem;
+        z-index: 99;
+        color: var(--text-color);
     }
 
     body.new #main section.new h1 {
@@ -193,7 +200,7 @@
     }
 }
 
-/* Medium devices (desktops, 768px and up) */
+/* Medium devices and up (770px and up) */
 @media only screen and (min-width: 768px) {
     .h-prime {
         font-size: 2rem;
@@ -236,6 +243,7 @@
         height: 70vh;
     }
 
+    /* Adjust nav ul */
     nav ul {
         display: flex;
         width: auto;
@@ -244,8 +252,16 @@
         padding: 0;
     }
 
-    /* Remove menu button on larger screens */
+    /* Menu button for screens larger than 770px */
     div.menu {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        z-index: 99;
+        color: var(--text-color);
         display: none;
     }
 }
