@@ -44,6 +44,9 @@
     }
 
     div.menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         left: 0.5rem;
         top: 0.5rem;
     }
@@ -55,6 +58,19 @@
     /* Adjust nav ul for smaller screens */
     nav ul {
         padding-left: 0.5rem;
+        display: none;
+        flex-direction: column;
+        list-style: none;
+        background: #000000be;
+        padding-top: 1rem;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        transition: .2s ease-in;
+    }
+
+    nav ul.active {
+        display: block;
     }
 
     /* Adjusting main section padding */
@@ -127,7 +143,9 @@
     }
 
     div.menu {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
         left: 1rem;
         top: 1rem;
@@ -139,20 +157,19 @@
 
     nav ul {
         display: none;
-        width: 100%;
-        position: absolute;
         flex-direction: column;
         list-style: none;
         background: #000000be;
         padding-top: 1rem;
         padding-left: 1rem;
+        position: absolute;
         top: 0;
+        width: 100%;
         transition: .2s ease-in;
     }
 
     nav ul.active {
         display: block;
-        transition: .2s ease-in;
     }
 
     /* Main section padding */
@@ -226,5 +243,10 @@
         flex-direction: row;
         background: transparent;
         padding: 0;
+    }
+
+    /* Remove menu button on larger screens */
+    div.menu {
+        display: none;
     }
 }
